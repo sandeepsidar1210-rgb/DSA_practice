@@ -1,18 +1,24 @@
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
+#include <stdio.h>
+
 int* countBits(int n, int* returnSize) {
-    for (int i =0; i<=n; i++){
-        
-        //binary conversion
-        int bin;
-        while (n==1 || n==0){
-           
-           ; 
-        }
-        
-        
+    int n;
+    scanf("%d", &n);
 
+    int binary[32];
+    int i = 0;
 
+    while(n > 0){
+        binary[i] = n % 2;
+        n = n / 2;
+        i++;
     }
+
+    // print in reverse
+    for(int j = i - 1; j >= 0; j--){
+        printf("%d", binary[j]);
+    }
+
+    return 0;
+
 }
+    
