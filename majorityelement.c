@@ -1,16 +1,21 @@
 #include <stdio.h>
 int majorityElement(int* nums, int numsSize) {
+    int count=0;
+    int candidate =0;
     for(int i =0; i<numsSize ; i++){
-        int count=0;
-        for(int j =0; j<numsSize; j++){
-            if(nums[i] == nums[j]){
-                count++;
-            }
-        }
-        if(count>numsSize/2){
-            return nums[i];
-        }
         
-    }
-    return -1;
+
+        if(count ==0){
+            candidate = nums[i];
+        }
+
+        if(nums[i] == candidate){
+            count++;
+        }
+        else{
+            count--;
+        }
+       
 }   
+return candidate;
+}
